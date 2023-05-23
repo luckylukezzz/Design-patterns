@@ -72,6 +72,11 @@ class CarBuilder implements Builder{
     }
 }
 
+// when you need to build various representations of the product,you can create several different builder classes that implement the same set of building steps(same interface),
+// but in a different manner
+
+// If you want extract a series of calls to the builder steps you use to construct a product into a separate class called director.
+
 class Director{
 
     public void constructRaceCar(Builder builder){
