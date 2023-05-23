@@ -64,6 +64,7 @@ class Square implements Component{
 class ContextMenu{
     public void duplicate(Component component){
         Component newComponent = component.clone();
+        System.out.println(newComponent);
     }
 }
 
@@ -73,14 +74,14 @@ class ContextMenu{
 public class Solution {
     public static void main(String[] args) {
         Circle circle1 = new Circle();
-        // circle1.setRadius(5);
-        // Square sq1 = new Square();
-        // sq1.setLength(6);
-        // ContextMenu menu1 = new ContextMenu();
-        // menu1.duplicate(sq1);
-        // menu1.duplicate(circle1);
-        Component x = new Circle();
-        System.out.println( x.clone());
+        circle1.setRadius(5);
+        Square sq1 = new Square();
+        sq1.setLength(6);
+        ContextMenu menu1 = new ContextMenu();
+        menu1.duplicate(sq1);
+        menu1.duplicate(circle1);
+      
+        
 
     }
 }
