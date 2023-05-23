@@ -19,6 +19,9 @@ class Car {
     public void setNoSeats(int noSeats) {
         this.noSeats = noSeats;
     }
+    public void getDetails(){
+        System.out.println("GPS: "+hasGps+" seats:"+noSeats+" model: "+model);
+    }
 
 
 
@@ -29,6 +32,7 @@ interface Builder{
     void setnoSeats(int no);
     void setTripComputer();
     void setGps();
+    void setModel(String modl);
     Car getProduct();
 
 }
@@ -56,6 +60,11 @@ class CarBuilder implements Builder{
         this.car.setHasGps(true);
     }
     @Override
+    public void setModel(String modl){
+        this.car.setModel(modl);
+    }
+
+    @Override
     public Car getProduct(){
         Car product = this.car;
         this.reset();
@@ -70,6 +79,7 @@ class Director{
         builder.setnoSeats(2);
         builder.setTripComputer();
         builder.setGps();
+        builder.setModel("GTR");
 
     }
 
@@ -90,6 +100,7 @@ public class App{
         CarBuilder builder1 = new CarBuilder();
         director.constructRaceCar(builder1);
         Car car = builder1.getProduct();
+        car.getDetails();
         
     }
 }        
