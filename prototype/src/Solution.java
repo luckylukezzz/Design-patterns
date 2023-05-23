@@ -1,7 +1,7 @@
 interface Component{
     void render();
     Component clone();
-    void print();
+    String toString();
 }
 
 class Circle implements Component{
@@ -26,8 +26,8 @@ class Circle implements Component{
         return target;
     }
     @Override
-    public void print(){
-        System.out.println("circle of radius "+radius);
+    public String toString(){
+        return "circle of radius "+radius;
     }
     
 }
@@ -54,8 +54,8 @@ class Square implements Component{
         return target;
     }
     @Override
-    public void print(){
-        System.out.println("square of length "+length);
+    public String toString(){
+        return "square of length "+length;
     }
     
     
@@ -64,7 +64,6 @@ class Square implements Component{
 class ContextMenu{
     public void duplicate(Component component){
         Component newComponent = component.clone();
-        newComponent.print();
     }
 }
 
@@ -74,12 +73,14 @@ class ContextMenu{
 public class Solution {
     public static void main(String[] args) {
         Circle circle1 = new Circle();
-        circle1.setRadius(5);
-        Square sq1 = new Square();
-        sq1.setLength(6);
-        ContextMenu menu1 = new ContextMenu();
-        menu1.duplicate(sq1);
-        menu1.duplicate(circle1);
+        // circle1.setRadius(5);
+        // Square sq1 = new Square();
+        // sq1.setLength(6);
+        // ContextMenu menu1 = new ContextMenu();
+        // menu1.duplicate(sq1);
+        // menu1.duplicate(circle1);
+        Component x = new Circle();
+        System.out.println( x.clone());
 
     }
 }
