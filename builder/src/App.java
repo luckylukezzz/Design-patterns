@@ -40,7 +40,7 @@ interface Builder{
 class CarBuilder implements Builder{
     private Car car;
 
-    public void CarBuilder(){
+    public CarBuilder(){
         this.reset();
     }
     @Override
