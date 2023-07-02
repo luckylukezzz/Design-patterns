@@ -62,6 +62,5 @@ public class SmartCardPay {
         SmartCard otpcard = new OTPSmartCardDecorator(pincard);
         otpcard.authenticate("abcd");
         SmartCard tfacard = new TFASmartCardDecorator(pincard);
-        tfacard.authenticate("1234");
-    }
+        tfacard.authenticate("1234");    }
 }
